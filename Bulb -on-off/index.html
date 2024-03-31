@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Bulb On / Off</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+            }
+            .container {
+                position: absolute;
+                left: 50%;
+                top: 40%;
+                transform: translate(-50%, -40%);
+                text-align: center;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .bulb-wrapper {
+                width: 200px;
+            }
+            .bulb-wrapper img {
+                width: 100%;
+                margin-bottom: 1em;
+            }
+            .bulb-wrapper button {
+                padding: 15px 25px;
+                border: none;
+                background-color: tomato;
+                color: #ffffff;
+                font-weight: 600;
+                border-radius: 25px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="bulb-wrapper">
+                <img id="bulbImg" src="images/bulb-off.png" alt="bulb">
+                <button type="button" onclick="changeBlubState()">Bulb ON / OFF</button>
+            </div>
+            <!-- Javascript -->
+            <script>
+                let state = 0; //Default State
+                let bulbImg = document.querySelector('#bulbImg');
+
+                function changeBlubState() {
+                    if (state === 0) {
+                        bulbImg.src="images/bulb-on.png"; //bulb on
+                        state = 1; // on state
+                    } else {
+                        bulbImg.src="images/bulb-off.png"; //bulb off
+                        state = 0; //off state
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>
